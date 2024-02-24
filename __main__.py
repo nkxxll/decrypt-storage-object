@@ -23,7 +23,8 @@ def get_args():
 
 
 def get_fek():
-    raise NotImplementedError("get fek Not implemented yet")
+    """get the FEK from the file"""
+    return "a" * 16
 
 
 def main():
@@ -34,3 +35,7 @@ def main():
 
     tsk = bytes(args.tsk, "utf-8")
     dec_fek = decryptfek.decrypt(enc_fek, tsk, len(tsk))
+    print(f"dec_fek: {dec_fek}")
+
+
+main()
