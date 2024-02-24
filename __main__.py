@@ -1,6 +1,8 @@
 import argparse
 import logging
+from typing import Tuple
 
+import decryptdata
 import decryptfek
 
 
@@ -24,7 +26,22 @@ def get_args():
 
 def get_fek():
     """get the FEK from the file"""
-    return "a" * 16
+    return b"a" * 16
+
+
+def get_iv_tag_data(file: str) -> Tuple[bytes, bytes, bytes]:
+    """get the iv, tag and data from the file
+
+    Args:
+        file (str): the file with the stored object
+    Returns:
+        (bytes, bytes, bytes): the iv, tag and data
+    """
+    with open(file, "rb") as f:
+        iv = f.read(12)
+        tag = f.read(16)
+        data = f.read()
+    return iv, tag, data
 
 
 def main():
@@ -34,8 +51,11 @@ def main():
     logger.debug(f"Args: {args}")
 
     tsk = bytes(args.tsk, "utf-8")
-    dec_fek = decryptfek.decrypt(enc_fek, tsk, len(tsk))
+    dec_fek = decryptfek.decrypt(enc_fek, tsk)
+    (iv, tag, data) = get_iv_tag_data(args.filename)
+    dec_data = decryptdata.decrypt(iv, tag, data, dec_fek)
     print(f"dec_fek: {dec_fek}")
+    print(f"dec_fek: {dec_data}")
 
 
 main()

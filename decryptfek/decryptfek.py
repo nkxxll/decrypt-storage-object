@@ -12,7 +12,6 @@ def decrypt(encrypted_fek: bytes, tsk: bytes) -> bytes:
     Args:
         encrypted_fek (bytes): the encrypted FEK
         tsk (bytes): the TSK
-        tsk_len (int): the length of the TSK
     Returns:
         bytes: the decrypted FEK
     """
@@ -22,6 +21,6 @@ def decrypt(encrypted_fek: bytes, tsk: bytes) -> bytes:
     aes = AES(tsk)
     cipher = Cipher(aes, mode)
     decryptor = cipher.decryptor()
-    res = decryptor.update(encrypted_fek) + decryptor.finalize()
+    res: bytes = decryptor.update(encrypted_fek) + decryptor.finalize()
     assert len(res) == 16
     return res
