@@ -3,6 +3,9 @@ from cryptography.hazmat.primitives.ciphers import Cipher
 from cryptography.hazmat.primitives.ciphers.algorithms import AES
 from cryptography.hazmat.primitives.ciphers.modes import ECB
 
+FEK_SIZE = 16
+TSK_SIZE = 32
+
 
 def decrypt(encrypted_fek: bytes, tsk: bytes) -> bytes:
     """decrypt the FEK with the TSK
@@ -15,8 +18,9 @@ def decrypt(encrypted_fek: bytes, tsk: bytes) -> bytes:
     Returns:
         bytes: the decrypted FEK
     """
-    assert len(tsk) == 32
-    assert len(encrypted_fek) == 16
+    # safety first
+    assert len(tsk) == TSK_SIZE, f"TSK size is wrong! TSK size: {TSK_SIZE}"
+    assert len(encrypted_fek) == FEK_SIZE, f"FEK size is wrong! FEK size: {FEK_SIZE}"
     mode = ECB()
     aes = AES(tsk)
     cipher = Cipher(aes, mode)

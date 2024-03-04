@@ -5,6 +5,19 @@ from typing import Tuple
 import decryptdata
 import decryptfek
 
+# Data
+IV_OFFSET = 0
+IV_SIZE = 16
+TAG_OFFSET = IV_SIZE
+TAG_SIZE = 16
+DATA_OFFSET = (
+    TAG_OFFSET + TAG_SIZE
+)  # data goes until the end then it is padded by aes gcm algo
+
+# Meta
+ENC_FEK_OFFSET = 0
+ENC_FEK_SIZE = decryptfek.FEK_SIZE
+
 
 def get_args():
     """get the arguments for the cli program
