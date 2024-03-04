@@ -63,6 +63,24 @@ def main():
     enc_fek = get_fek()
     logger.debug(f"Args: {args}")
 
+    files = dict()
+    tsks = dict()
+
+    def open_file_add(dict_: dict, file: str):
+        with open(file, "r") as f:
+            tmp = f.read()
+            dict_[file] = tmp
+
+    open_file_add(files, "./fixtures/0")
+    open_file_add(files, "./fixtures/1")
+    open_file_add(files, "./fixtures/2")
+    open_file_add(tsks, "./fixtures/tsk")
+    open_file_add(tsks, "./fixtures/tsk2")
+    if args.tsk is not None:
+        tsks["args_tsk"] = args.tsk
+    if args.file is not None:
+        files["args_file"] = args.file
+
     tsk = bytes(args.tsk, "utf-8")
     dec_fek = decryptfek.decrypt(enc_fek, tsk)
     (iv, tag, data) = get_iv_tag_data(args.filename)
