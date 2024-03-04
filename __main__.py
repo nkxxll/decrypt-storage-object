@@ -7,7 +7,7 @@ import decryptfek
 
 # Data
 IV_OFFSET = 0
-IV_SIZE = 16
+IV_SIZE = 12
 TAG_OFFSET = IV_SIZE
 TAG_SIZE = 16
 DATA_OFFSET = (
@@ -51,10 +51,22 @@ def get_iv_tag_data(file: str) -> Tuple[bytes, bytes, bytes]:
         (bytes, bytes, bytes): the iv, tag and data
     """
     with open(file, "rb") as f:
-        iv = f.read(12)
-        tag = f.read(16)
-        data = f.read()
+        content = f.read()
+        iv = content[IV_OFFSET : IV_OFFSET + IV_SIZE]
+        tag = content[TAG_OFFSET : TAG_OFFSET + TAG_SIZE]
+        data = content[TAG_OFFSET + TAG_SIZE :]
     return iv, tag, data
+
+
+def open_file_add(dict_: dict, file: str):
+    with open(file, "r") as f:
+        tmp = f.read()
+        dict_[file] = tmp
+
+
+def tsk_file_to_bytes(tsks: dict):
+    for k, tsk in tsks:
+        tsks[k] = [int.to_bytes(int(integer)) for integer in tsk.split("\n")]
 
 
 def main():
@@ -66,11 +78,6 @@ def main():
     files = dict()
     tsks = dict()
 
-    def open_file_add(dict_: dict, file: str):
-        with open(file, "r") as f:
-            tmp = f.read()
-            dict_[file] = tmp
-
     open_file_add(files, "./fixtures/0")
     open_file_add(files, "./fixtures/1")
     open_file_add(files, "./fixtures/2")
@@ -81,12 +88,20 @@ def main():
     if args.file is not None:
         files["args_file"] = args.file
 
-    tsk = bytes(args.tsk, "utf-8")
-    dec_fek = decryptfek.decrypt(enc_fek, tsk)
-    (iv, tag, data) = get_iv_tag_data(args.filename)
-    dec_data = decryptdata.decrypt(iv, tag, data, dec_fek)
-    print(f"dec_fek: {dec_fek}")
-    print(f"dec_fek: {dec_data}")
+    # convert the line by line TSK bytes into real bytes
+    tsk_file_to_bytes(tsks)
+
+    for key, tsk in tsks:
+        tsk = bytes(args.tsk, "utf-8")
+        dec_fek = decryptfek.decrypt(enc_fek, tsk)
+        for f_key, file_content in files:
+            iv: bytes = b""
+            tag: bytes = b""
+            data: bytes = b""
+            (iv, tag, data) = get_iv_tag_data(file_content)
+            dec_data = decryptdata.decrypt(iv, tag, data, dec_fek)
+            print(f"tsk: {key}, file: {f_key} dec_fek: {dec_fek}")
+            print(f"dec_fek: {dec_data}")
 
 
 main()
