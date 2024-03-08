@@ -1,0 +1,650 @@
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 000, 235
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 001, 090
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 002, 129
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 003, 115
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 004, 208
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 005, 068
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 006, 081
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 007, 172
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 008, 166
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 009, 061
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 010, 052
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 011, 165
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 012, 015
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 013, 075
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 014, 078
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 015, 217
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 000, 053
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 001, 089
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 002, 162
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 003, 090
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 004, 146
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 005, 252
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 006, 008
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 007, 009
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 008, 001
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 009, 015
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 010, 235
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 011, 237
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 012, 013
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 013, 053
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 014, 119
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 015, 045
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 000, 239
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 001, 168
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 002, 252
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 003, 101
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 004, 241
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 005, 255
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 006, 051
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 007, 201
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 008, 013
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 009, 167
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 010, 094
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 011, 227
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 012, 226
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 013, 053
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 014, 154
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 015, 207
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 016, 157
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 017, 152
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 018, 030
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 019, 153
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 020, 190
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 021, 209
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 022, 183
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 023, 011
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 024, 143
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 025, 133
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 026, 023
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 027, 176
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 028, 158
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 029, 091
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 030, 176
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 031, 217
+-- first key --
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 000, 167
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 001, 195
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 002, 011
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 003, 123
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 004, 061
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 005, 086
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 006, 157
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 007, 216
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 008, 115
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 009, 252
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 010, 250
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 011, 177
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 012, 020
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 013, 070
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 014, 098
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 015, 163
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 000, 139
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 001, 043
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 002, 055
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 003, 117
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 004, 235
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 005, 180
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 006, 106
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 007, 237
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 008, 234
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 009, 001
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 010, 110
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 011, 054
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 012, 147
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 013, 123
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 014, 135
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 015, 065
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 000, 134
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 001, 218
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 002, 033
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 003, 101
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 004, 025
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 005, 024
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 006, 090
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 007, 224
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 008, 158
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 009, 095
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 010, 083
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 011, 159
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 012, 204
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 013, 149
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 014, 253
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 015, 018
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 016, 085
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 017, 016
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 018, 194
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 019, 131
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 020, 110
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 021, 130
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 022, 234
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 023, 252
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 024, 040
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 025, 199
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 026, 208
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 027, 029
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 028, 015
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 029, 188
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 030, 156
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 031, 236
+-- second --
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 000, 235
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 001, 090
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 002, 129
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 003, 115
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 004, 208
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 005, 068
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 006, 081
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 007, 172
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 008, 166
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 009, 061
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 010, 052
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 011, 165
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 012, 015
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 013, 075
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 014, 078
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 015, 217
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 000, 053
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 001, 089
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 002, 162
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 003, 090
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 004, 146
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 005, 252
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 006, 008
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 007, 009
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 008, 001
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 009, 015
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 010, 235
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 011, 237
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 012, 013
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 013, 053
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 014, 119
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 015, 045
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 000, 239
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 001, 168
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 002, 252
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 003, 101
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 004, 241
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 005, 255
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 006, 051
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 007, 201
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 008, 013
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 009, 167
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 010, 094
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 011, 227
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 012, 226
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 013, 053
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 014, 154
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 015, 207
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 016, 157
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 017, 152
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 018, 030
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 019, 153
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 020, 190
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 021, 209
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 022, 183
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 023, 011
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 024, 143
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 025, 133
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 026, 023
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 027, 176
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 028, 158
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 029, 091
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 030, 176
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 031, 217
+-- third --
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 000, 024
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 001, 047
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 002, 164
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 003, 120
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 004, 159
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 005, 123
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 006, 126
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 007, 148
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 008, 219
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 009, 213
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 010, 084
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 011, 135
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 012, 115
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 013, 076
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 014, 135
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 015, 020
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 000, 098
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 001, 006
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 002, 042
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 003, 081
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 004, 023
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 005, 112
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 006, 086
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 007, 225
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 008, 007
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 009, 226
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 010, 171
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 011, 016
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 012, 139
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 013, 053
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 014, 177
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 015, 142
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 000, 134
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 001, 218
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 002, 033
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 003, 101
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 004, 025
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 005, 024
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 006, 090
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 007, 224
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 008, 158
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 009, 095
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 010, 083
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 011, 159
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 012, 204
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 013, 149
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 014, 253
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 015, 018
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 016, 085
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 017, 016
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 018, 194
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 019, 131
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 020, 110
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 021, 130
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 022, 234
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 023, 252
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 024, 040
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 025, 199
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 026, 208
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 027, 029
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 028, 015
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 029, 188
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 030, 156
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 031, 236
+-- fourth --
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 000, 235
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 001, 090
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 002, 129
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 003, 115
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 004, 208
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 005, 068
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 006, 081
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 007, 172
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 008, 166
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 009, 061
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 010, 052
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 011, 165
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 012, 015
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 013, 075
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 014, 078
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 015, 217
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 000, 053
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 001, 089
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 002, 162
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 003, 090
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 004, 146
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 005, 252
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 006, 008
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 007, 009
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 008, 001
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 009, 015
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 010, 235
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 011, 237
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 012, 013
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 013, 053
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 014, 119
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 015, 045
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 000, 239
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 001, 168
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 002, 252
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 003, 101
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 004, 241
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 005, 255
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 006, 051
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 007, 201
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 008, 013
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 009, 167
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 010, 094
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 011, 227
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 012, 226
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 013, 053
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 014, 154
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 015, 207
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 016, 157
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 017, 152
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 018, 030
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 019, 153
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 020, 190
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 021, 209
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 022, 183
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 023, 011
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 024, 143
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 025, 133
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 026, 023
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 027, 176
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 028, 158
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 029, 091
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 030, 176
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 031, 217
+-- fifth --
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 000, 128
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 001, 057
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 002, 155
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 003, 175
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 004, 018
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 005, 114
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 006, 189
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 007, 196
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 008, 038
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 009, 010
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 010, 100
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 011, 133
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 012, 104
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 013, 171
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 014, 081
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 015, 233
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 000, 132
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 001, 201
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 002, 010
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 003, 157
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 004, 190
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 005, 037
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 006, 007
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 007, 249
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 008, 010
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 009, 105
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 010, 067
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 011, 213
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 012, 206
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 013, 139
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 014, 245
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 015, 146
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 000, 206
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 001, 082
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 002, 134
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 003, 119
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 004, 201
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 005, 221
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 006, 251
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 007, 090
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 008, 087
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 009, 049
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 010, 103
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 011, 134
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 012, 013
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 013, 118
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 014, 096
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 015, 232
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 016, 248
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 017, 040
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 018, 051
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 019, 094
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 020, 131
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 021, 193
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 022, 086
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 023, 127
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 024, 240
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 025, 019
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 026, 048
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 027, 188
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 028, 099
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 029, 041
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 030, 030
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 031, 243
+-- sixth --
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 000, 235
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 001, 090
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 002, 129
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 003, 115
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 004, 208
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 005, 068
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 006, 081
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 007, 172
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 008, 166
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 009, 061
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 010, 052
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 011, 165
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 012, 015
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 013, 075
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 014, 078
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 015, 217
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 000, 053
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 001, 089
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 002, 162
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 003, 090
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 004, 146
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 005, 252
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 006, 008
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 007, 009
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 008, 001
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 009, 015
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 010, 235
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 011, 237
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 012, 013
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 013, 053
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 014, 119
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 015, 045
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 000, 239
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 001, 168
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 002, 252
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 003, 101
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 004, 241
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 005, 255
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 006, 051
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 007, 201
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 008, 013
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 009, 167
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 010, 094
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 011, 227
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 012, 226
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 013, 053
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 014, 154
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 015, 207
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 016, 157
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 017, 152
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 018, 030
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 019, 153
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 020, 190
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 021, 209
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 022, 183
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 023, 011
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 024, 143
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 025, 133
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 026, 023
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 027, 176
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 028, 158
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 029, 091
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 030, 176
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 031, 217
+-- seventh --
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 000, 132
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 001, 201
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 002, 010
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 003, 157
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 004, 190
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 005, 037
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 006, 007
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 007, 249
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 008, 010
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 009, 105
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 010, 067
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 011, 213
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 012, 206
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 013, 139
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 014, 245
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 015, 146
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 000, 128
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 001, 057
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 002, 155
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 003, 175
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 004, 018
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 005, 114
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 006, 189
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 007, 196
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 008, 038
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 009, 010
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 010, 100
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 011, 133
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 012, 104
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 013, 171
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 014, 081
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 015, 233
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 000, 206
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 001, 082
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 002, 134
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 003, 119
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 004, 201
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 005, 221
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 006, 251
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 007, 090
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 008, 087
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 009, 049
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 010, 103
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 011, 134
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 012, 013
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 013, 118
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 014, 096
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 015, 232
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 016, 248
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 017, 040
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 018, 051
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 019, 094
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 020, 131
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 021, 193
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 022, 086
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 023, 127
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 024, 240
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 025, 019
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 026, 048
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 027, 188
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 028, 099
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 029, 041
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 030, 030
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 031, 243
+-- seventh --
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 000, 235
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 001, 090
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 002, 129
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 003, 115
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 004, 208
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 005, 068
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 006, 081
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 007, 172
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 008, 166
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 009, 061
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 010, 052
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 011, 165
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 012, 015
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 013, 075
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 014, 078
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 015, 217
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 000, 053
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 001, 089
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 002, 162
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 003, 090
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 004, 146
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 005, 252
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 006, 008
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 007, 009
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 008, 001
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 009, 015
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 010, 235
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 011, 237
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 012, 013
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 013, 053
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 014, 119
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 015, 045
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 000, 239
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 001, 168
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 002, 252
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 003, 101
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 004, 241
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 005, 255
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 006, 051
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 007, 201
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 008, 013
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 009, 167
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 010, 094
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 011, 227
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 012, 226
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 013, 053
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 014, 154
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 015, 207
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 016, 157
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 017, 152
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 018, 030
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 019, 153
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 020, 190
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 021, 209
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 022, 183
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 023, 011
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 024, 143
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 025, 133
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 026, 023
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 027, 176
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 028, 158
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 029, 091
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 030, 176
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 031, 217
+-- eighth --
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 000, 132
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 001, 201
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 002, 010
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 003, 157
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 004, 190
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 005, 037
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 006, 007
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 007, 249
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 008, 010
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 009, 105
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 010, 067
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 011, 213
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 012, 206
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 013, 139
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 014, 245
+D/TC:? 0 tee_fs_fek_crypt:127 FEK? : 015, 146
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 000, 128
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 001, 057
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 002, 155
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 003, 175
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 004, 018
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 005, 114
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 006, 189
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 007, 196
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 008, 038
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 009, 010
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 010, 100
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 011, 133
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 012, 104
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 013, 171
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 014, 081
+D/TC:? 0 tee_fs_fek_crypt:130 ENCRYPT FEK? : 015, 233
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 000, 206
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 001, 082
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 002, 134
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 003, 119
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 004, 201
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 005, 221
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 006, 251
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 007, 090
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 008, 087
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 009, 049
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 010, 103
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 011, 134
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 012, 013
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 013, 118
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 014, 096
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 015, 232
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 016, 248
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 017, 040
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 018, 051
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 019, 094
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 020, 131
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 021, 193
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 022, 086
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 023, 127
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 024, 240
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 025, 019
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 026, 048
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 027, 188
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 028, 099
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 029, 041
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 030, 030
+D/TC:? 0 tee_fs_fek_crypt:133 should be TSK : 031, 243
+
