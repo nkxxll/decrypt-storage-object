@@ -1,0 +1,125 @@
+diff --git a/core/kernel/huk_subkey.c b/core/kernel/huk_subkey.c
+index 66b14474c..ee8751790 100644
+--- a/core/kernel/huk_subkey.c
++++ b/core/kernel/huk_subkey.c
+@@ -7,8 +7,10 @@
+ #include <crypto/crypto.h>
+ #include <kernel/huk_subkey.h>
+ #include <kernel/tee_common_otp.h>
++#include <stdio.h>
+ #include <string_ext.h>
+ #include <tee/tee_fs_key_manager.h>
++#include <trace.h>
+ 
+ static TEE_Result mac_usage(void *ctx, uint32_t usage)
+ {
+@@ -45,6 +47,9 @@ static TEE_Result huk_compat(void *ctx, enum huk_subkey_usage usage)
+ 		return TEE_SUCCESS;
+ 	case HUK_SUBKEY_SSK:
+ 		res = get_otp_die_id(chip_id, sizeof(chip_id));
++		for (unsigned int i = 0; i < TEE_FS_KM_CHIP_ID_LENGTH; i++) {
++			DMSG("chip: %d, %d", i, chip_id[i]);
++		}
+ 		if (res)
+ 			return res;
+ 		res = crypto_mac_update(ctx, chip_id, sizeof(chip_id));
+@@ -78,6 +83,10 @@ TEE_Result __huk_subkey_derive(enum huk_subkey_usage usage,
+ 	res = tee_otp_get_hw_unique_key(&huk);
+ 	if (res)
+ 		goto out;
++	for (int i =  0; i < HW_UNIQUE_KEY_LENGTH; i++) {
++		DMSG("%d, %d", i, huk.data[i]);
++	}
++	
+ 
+ 	res = crypto_mac_init(ctx, huk.data, sizeof(huk.data));
+ 	if (res)
+@@ -98,6 +107,9 @@ TEE_Result __huk_subkey_derive(enum huk_subkey_usage usage,
+ 	}
+ 
+ 	res = crypto_mac_final(ctx, subkey, subkey_len);
++	for (unsigned int i = 0;i < subkey_len; i++) {
++		DMSG("subkey: %d, %d", i, subkey[i]);
++	}
+ out:
+ 	if (res)
+ 		memzero_explicit(subkey, subkey_len);
+diff --git a/core/tee/tee_fs_key_manager.c b/core/tee/tee_fs_key_manager.c
+index 392fa4df5..57a03bb67 100644
+--- a/core/tee/tee_fs_key_manager.c
++++ b/core/tee/tee_fs_key_manager.c
+@@ -70,6 +70,9 @@ exit:
+ 	return res;
+ }
+ 
++/*
++ * the in key is actually the decrypted fek bad naming
++ */
+ TEE_Result tee_fs_fek_crypt(const TEE_UUID *uuid, TEE_OperationMode mode,
+ 			    const uint8_t *in_key, size_t size,
+ 			    uint8_t *out_key)
+@@ -120,6 +123,15 @@ TEE_Result tee_fs_fek_crypt(const TEE_UUID *uuid, TEE_OperationMode mode,
+ 
+ 	crypto_cipher_final(ctx);
+ 
++	for (unsigned int i = 0; i < size; i++) {
++		DMSG("FEK? : %03d, %03d", i, in_key[i]);
++	}
++	for (unsigned int i = 0; i < sizeof(dst_key); i++) {
++		DMSG("ENCRYPT FEK? : %03d, %03d", i, dst_key[i]);
++	}
++	for (unsigned int i = 0; i < sizeof(tsk); i++) {
++		DMSG("should be TSK : %03d, %03d", i, tsk[i]);
++	}
+ 	memcpy(out_key, dst_key, sizeof(dst_key));
+ 
+ exit:
+@@ -132,7 +144,11 @@ exit:
+ 
+ static TEE_Result generate_fek(uint8_t *key, uint8_t len)
+ {
+-	return crypto_rng_read(key, len);
++	TEE_Result res = crypto_rng_read(key, len);
++	for (unsigned int i = 0; i < len; i++) {
++		DMSG("generate fek -> FEK %03d, %03d", i, key[i]);
++	}
++	return res;
+ }
+ 
+ static TEE_Result tee_fs_init_key_manager(void)
+@@ -143,6 +159,9 @@ static TEE_Result tee_fs_init_key_manager(void)
+ 
+ 	res = huk_subkey_derive(HUK_SUBKEY_SSK, NULL, 0,
+ 				tee_fs_ssk.key, sizeof(tee_fs_ssk.key));
++	for (unsigned int i = 0; i < HUK_SUBKEY_MAX_LEN;i ++) {
++		DMSG("subkeysubkey %d, %d", i, tee_fs_ssk.key[i]);
++	}
+ 	if (res == TEE_SUCCESS)
+ 		tee_fs_ssk.is_init = 1;
+ 	else
+@@ -155,13 +174,25 @@ TEE_Result tee_fs_generate_fek(const TEE_UUID *uuid, void *buf, size_t buf_size)
+ {
+ 	TEE_Result res;
+ 
++	for (size_t i = 0; i < buf_size; i++) {
++		DMSG("buf gen fek %d", ((int*) buf)[i]);
++	}
++
+ 	if (buf_size != TEE_FS_KM_FEK_SIZE)
+ 		return TEE_ERROR_BAD_PARAMETERS;
+ 
++	for (size_t i = 0; i < buf_size; i++) {
++		DMSG("buf gen fek %d", ((int*) buf)[i]);
++	}
++
+ 	res = generate_fek(buf, TEE_FS_KM_FEK_SIZE);
+ 	if (res != TEE_SUCCESS)
+ 		return res;
+ 
++	for (size_t i = 0; i < buf_size; i++) {
++		DMSG("buf gen fek %d", ((int*) buf)[i]);
++	}
++
+ 	return tee_fs_fek_crypt(uuid, TEE_MODE_ENCRYPT, buf,
+ 				TEE_FS_KM_FEK_SIZE, buf);
+ }

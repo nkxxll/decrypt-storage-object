@@ -1,0 +1,61 @@
+diff --git a/host/xtest/stats.c b/host/xtest/stats.c
+index fb16d55..cde339e 100644
+--- a/host/xtest/stats.c
++++ b/host/xtest/stats.c
+@@ -35,6 +35,7 @@ static int usage(void)
+ 	fprintf(stderr, " --time         Print REE and TEE time\n");
+ 	fprintf(stderr, " --clocks       Dump clock tree on secure console\n");
+ 	fprintf(stderr, " --regulators   Dump regulator tree on secure console\n");
++	fprintf(stderr, " --zero-huk     Tells you if the huk is still the standard huk with zeros only\n");
+ 
+ 	return EXIT_FAILURE;
+ }
+@@ -172,6 +173,39 @@ static int stat_alloc(int argc, char *argv[])
+ 	return close_sess(&ctx, &sess);
+ }
+ 
++static int stat_huk_zero(int argc, char *argv[])
++{
++	TEEC_Context ctx = { };
++	TEEC_Session sess = { };
++	TEEC_Result res = TEEC_ERROR_GENERIC;
++	uint32_t eo = 0;
++	TEEC_Operation op = { };
++
++	UNUSED(argv);
++	if (argc != 1)
++		return usage();
++
++	open_sess(&ctx, &sess);
++
++	op.paramTypes = TEEC_PARAM_TYPES(TEEC_VALUE_INOUT,
++					 TEEC_NONE,
++					 TEEC_NONE, TEEC_NONE);
++	res = TEEC_InvokeCommand(&sess, STATS_GET_HUK_ZERO, &op, &eo);
++	if (res != TEEC_SUCCESS)
++		errx(EXIT_FAILURE,
++		     "TEEC_InvokeCommand: res %#"PRIx32" err_orig %#"PRIx32,
++		     res, eo);
++
++	int huk_zero = op.params[0].value.a;
++	if (huk_zero == 0) {
++		puts("Everything is fine\n");
++	} else {
++		puts("=== BIG WARNING ===\n\nThe HUK is zero!\n\n");
++	}
++
++	return close_sess(&ctx, &sess);
++}
++
+ static int stat_memleak(int argc, char *argv[])
+ {
+ 	TEEC_Context ctx = { };
+@@ -365,6 +399,8 @@ int stats_runner_cmd_parser(int argc, char *argv[])
+ 		if (!strcmp(argv[1], "--regulators"))
+ 			return stat_driver_info(argc - 1,
+ 						STATS_DRIVER_TYPE_REGULATOR);
++		if (!strcmp(argv[1], "--zero-huk"))
++			return stat_huk_zero(argc - 1, argv + 1);
+ 	}
+ 
+ 	return usage();

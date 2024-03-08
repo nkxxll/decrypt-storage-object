@@ -1,0 +1,77 @@
+diff --git a/core/pta/stats.c b/core/pta/stats.c
+index 353ed0a56..0f8efa535 100644
+--- a/core/pta/stats.c
++++ b/core/pta/stats.c
+@@ -2,6 +2,8 @@
+ /*
+  * Copyright (c) 2015, Linaro Limited
+  */
++#include "tee_api_defines.h"
++#include "utee_defines.h"
+ #include <compiler.h>
+ #include <drivers/clk.h>
+ #include <drivers/regulator.h>
+@@ -15,6 +17,42 @@
+ #include <string_ext.h>
+ #include <tee_api_types.h>
+ #include <trace.h>
++#include <kernel/huk_subkey.h>
++#include <kernel/tee_common_otp.h>
++
++static TEE_Result get_huk_zero(uint32_t type, TEE_Param p[TEE_NUM_PARAMS]) {
++	TEE_Result res = TEE_SUCCESS;
++	struct tee_hw_unique_key huk = { };
++	
++	// set out to 1 expect the worst
++	p[0].value.a = 1;
++
++	/*
++	 * this is the place where we give back the answer to if the huk is zeros only
++	 */
++	if (TEE_PARAM_TYPES(TEE_PARAM_TYPE_VALUE_INOUT,
++			    TEE_PARAM_TYPE_NONE,
++			    TEE_PARAM_TYPE_NONE,
++			    TEE_PARAM_TYPE_NONE) != type) {
++		return TEE_ERROR_BAD_PARAMETERS;
++	}
++
++	// get the huk here and check for the 0s then return huk_zero
++	res = tee_otp_get_hw_unique_key(&huk);
++
++	for (int i =  0; i < HW_UNIQUE_KEY_LENGTH; i++) {
++		DMSG("%d, %d", i, huk.data[i]);
++		if (huk.data[i] != 0) {
++			// if not zero we have a legit huk and return
++			p[0].value.a = 0;
++			// everything is fine return
++			break;
++		}
++	}
++	// nobody sees the huk hopefully also frees it
++	memzero_explicit(&huk, sizeof(huk));
++	return res;
++}
+ 
+ static TEE_Result get_alloc_stats(uint32_t type, TEE_Param p[TEE_NUM_PARAMS])
+ {
+@@ -223,6 +261,8 @@ static TEE_Result invoke_command(void *psess __unused,
+ 		return get_system_time(ptypes, params);
+ 	case STATS_CMD_PRINT_DRIVER_INFO:
+ 		return print_driver_info(ptypes, params);
++	case STATS_GET_HUK_ZERO:
++		return get_huk_zero(ptypes, params);
+ 	default:
+ 		break;
+ 	}
+diff --git a/lib/libutee/include/pta_stats.h b/lib/libutee/include/pta_stats.h
+index f95d3acb8..ccb3c70dd 100644
+--- a/lib/libutee/include/pta_stats.h
++++ b/lib/libutee/include/pta_stats.h
+@@ -87,6 +87,7 @@ struct pta_stats_ta {
+  * [in]    value[0].a        Target driver, one of STATS_DRIVER_TYPE_*
+  */
+ #define STATS_CMD_PRINT_DRIVER_INFO	5
++#define STATS_GET_HUK_ZERO	6
+ 
+ #define STATS_DRIVER_TYPE_CLOCK		0
+ #define STATS_DRIVER_TYPE_REGULATOR	1
