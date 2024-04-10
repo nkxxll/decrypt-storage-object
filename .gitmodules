@@ -1,0 +1,3 @@
+[submodule "seal-key"]
+	path = seal-key
+	url = git@github.com:nkxxll/seal-key.git
