@@ -3,6 +3,14 @@
 Discalmer this is (state now) a python program that decrypts a optee storage object after the extraction of such a file with the coresponding TSK (Trusted Applicaton Storage Key). And the "Meta File".
 ...for ease of use the rest of the _Studienarbeits-Programs_ also go here...
 
+## Note
+
+In `img` there is a picture `bug.png`. In this picture there is a bug associated with the seal-key
+application that I cannot explain myself. I can read storage objects if I parse them by the command
+line I cannot read them if I parse them any other way through stdin or with a file. I don't know why
+the objects are definitly written to secure storage. This could be veryfied with a debug print just
+before writing.
+
 ## General Preceedure
 
 General Preceedure for decrypting a data object...
