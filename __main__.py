@@ -1,4 +1,5 @@
 import argparse
+import uuid
 import logging
 from typing import Tuple
 
@@ -19,6 +20,33 @@ DATA_OFFSET = (
 ENC_FEK_OFFSET = 0
 ENC_FEK_SIZE = decryptfek.FEK_SIZE
 
+logging.basicConfig(level=logging.DEBUG)
+
+# 0xf4e750bb, 0x1437, 0x4fbf, 0x87, 0x85, 0x8d, 0x35, 0x80, 0xc3, 0x49, 0x94
+"""uuid from the seal-key TA"""
+TA_UUID = uuid.UUID(
+    bytes=bytes(
+        [
+            0xF4,
+            0xE7,
+            0x50,
+            0xBB,
+            0x14,
+            0x37,
+            0x4F,
+            0xBF,
+            0x87,
+            0x85,
+            0x8D,
+            0x35,
+            0x80,
+            0xC3,
+            0x49,
+            0x94,
+        ]
+    )
+)
+
 
 def get_args():
     """get the arguments for the cli program
@@ -32,26 +60,28 @@ def get_args():
     arg_parser.add_argument(
         "-f", "--file", type=str, default=None, help="The file with the stored object"
     )
-    arg_parser.add_argument(
-        "-k", "--tsk", type=str, default=None, help="The TSK for the stored object"
-    )
+    # we generate the tsk now
+    # arg_parser.add_argument(
+    #     "-k", "--tsk", type=str, default=None, help="The TSK for the stored object"
+    # )
     return arg_parser.parse_args()
 
 
-def get_fek():
+def get_enc_fek(filename: str):
     """get the FEK from the file"""
-    return b"a" * 16
+    with open(filename, "rb") as f:
+        return f.read(16)
 
 
-def get_iv_tag_data(file: str) -> Tuple[bytes, bytes, bytes]:
+def get_iv_tag_data(filename: str) -> Tuple[bytes, bytes, bytes]:
     """get the iv, tag and data from the file
 
     Args:
-        file (str): the file with the stored object
+        file (str): the file name with the stored object
     Returns:
         (bytes, bytes, bytes): the iv, tag and data
     """
-    with open(file, "rb") as f:
+    with open(filename, "rb") as f:
         content = f.read()
         iv = content[IV_OFFSET : IV_OFFSET + IV_SIZE]
         tag = content[TAG_OFFSET : TAG_OFFSET + TAG_SIZE]
@@ -70,39 +100,63 @@ def tsk_file_to_bytes(tsks: dict):
         tsks[k] = [int.to_bytes(int(integer)) for integer in tsk.split("\n")]
 
 
+def try_decrypt(meta_file_name, data_file_name):
+    enc_fek = get_enc_fek(meta_file_name)
+    ssk = generatetsk.get_ssk()
+    tsk = generatetsk.get_tsk(TA_UUID, ssk)
+
+    # ,----------------------.
+    # |Meta block            |  ,----------------------.
+    # |----------------------|  |Data block            |
+    # |16 Bytes encrypted FEK|  |----------------------|
+    # |==                    |  |12 Data IV            |
+    # |12 Meta IV            |  |==                    |
+    # |==                    |  |16 Tag                |
+    # |... tag               |  |==                    |
+    # |==                    |  |...rest encrypted data|
+    # |encrypted meta data   |  `----------------------'
+    # `----------------------'
+
+    dec_fek = decryptfek.decrypt(enc_fek, tsk)
+
+    # let's try to first use the 0 as meta data and the 1 a block data then the other way
+    iv: bytes = b""
+    tag: bytes = b""
+    data: bytes = b""
+    logging.debug(f"decrypted fek:{dec_fek}")
+    # read the file contents of the data block
+    (iv, tag, data) = get_iv_tag_data(data_file_name)
+    logging.debug("-------")
+    logging.debug(f"iv:{iv}, tag: {tag} data:{data}")
+    logging.debug("-------")
+    try:
+        dec_data = decryptdata.decrypt(iv=iv, tag=tag, data=data, password=dec_fek)
+        logging.debug(f"decrypted data:{dec_data}")
+    except:
+        logging.debug("didn't work")
+
+
 def main():
-    logger = logging.getLogger()
-    args = get_args()
-    enc_fek = get_fek()
-    logger.debug(f"Args: {args}")
+    # args = get_args()
+    # logging.debug(f"Args: {args}")
+    # I don't know if this works I don't want to delete it but it could be utter shit
+    # open_file_add(files, "./fixtures/0")
+    # open_file_add(files, "./fixtures/1")
+    # open_file_add(files, "./fixtures/2")
+    # open_file_add(tsks, "./fixtures/tsk")
+    # open_file_add(tsks, "./fixtures/tsk2")
 
-    files = dict()
-    tsks = dict()
+    # kiss keep it simple stupid
+    # if args.file is not None:
+    #     files["args_file"] = args.file
+    logging.debug("hello")
 
-    open_file_add(files, "./fixtures/0")
-    open_file_add(files, "./fixtures/1")
-    open_file_add(files, "./fixtures/2")
-    open_file_add(tsks, "./fixtures/tsk")
-    open_file_add(tsks, "./fixtures/tsk2")
-    if args.tsk is not None:
-        tsks["args_tsk"] = args.tsk
-    if args.file is not None:
-        files["args_file"] = args.file
-
-    # convert the line by line TSK bytes into real bytes
-    tsk_file_to_bytes(tsks)
-
-    for key, tsk in tsks:
-        tsk = bytes(args.tsk, "utf-8")
-        dec_fek = decryptfek.decrypt(enc_fek, tsk)
-        for f_key, file_content in files:
-            iv: bytes = b""
-            tag: bytes = b""
-            data: bytes = b""
-            (iv, tag, data) = get_iv_tag_data(file_content)
-            dec_data = decryptdata.decrypt(iv, tag, data, dec_fek)
-            print(f"tsk: {key}, file: {f_key} dec_fek: {dec_fek}")
-            print(f"dec_fek: {dec_data}")
+    try_decrypt("./fixtures/new/1", "./fixtures/new/2")
+    # ==> the other way
+    try_decrypt("./fixtures/new/2", "./fixtures/new/1")
+    try_decrypt("./fixtures/new/0", "./fixtures/new/1")
+    # ==> the other way
+    try_decrypt("./fixtures/new/1", "./fixtures/new/0")
 
 
 main()
