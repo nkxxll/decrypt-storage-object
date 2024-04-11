@@ -1,1 +1,1 @@
-from . import decryptfek, decryptdata
+from . import decryptfek, decryptdata, generatetsk

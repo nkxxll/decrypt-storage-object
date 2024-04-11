@@ -4,6 +4,7 @@ from typing import Tuple
 
 import decryptdata
 import decryptfek
+import generatetsk
 
 # Data
 IV_OFFSET = 0
