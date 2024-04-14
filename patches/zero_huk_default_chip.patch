@@ -1,0 +1,201 @@
+diff --git a/core/pta/stats.c b/core/pta/stats.c
+index 353ed0a56..77c49b6f8 100644
+--- a/core/pta/stats.c
++++ b/core/pta/stats.c
+@@ -2,6 +2,8 @@
+ /*
+  * Copyright (c) 2015, Linaro Limited
+  */
++#include "tee_api_defines.h"
++#include "utee_defines.h"
+ #include <compiler.h>
+ #include <drivers/clk.h>
+ #include <drivers/regulator.h>
+@@ -15,6 +17,65 @@
+ #include <string_ext.h>
+ #include <tee_api_types.h>
+ #include <trace.h>
++#include <kernel/huk_subkey.h>
++#include <kernel/tee_common_otp.h>
++#include <tee/tee_fs_key_manager.h>
++
++static TEE_Result get_huk_zero(uint32_t type, TEE_Param p[TEE_NUM_PARAMS])
++{
++	TEE_Result res = TEE_SUCCESS;
++	struct tee_hw_unique_key huk = {};
++	uint8_t chip_id[TEE_FS_KM_CHIP_ID_LENGTH] = { 0 };
++	size_t chip_id_len = sizeof(chip_id);
++	uint8_t beef[4] = { 'B', 'E', 'E', 'F' };
++	int chip_gen_res = 0;
++
++	// set out to 11 huk zero; chip beef
++	// set out to 01 huk zero; chip not beef
++	// set out to 10 huk not zero; chip beef
++	// set out to 00 huk not zero; chip not beef
++	p[0].value.a = 0b11;
++
++	/*
++	 * this is the place where we give back the answer to if the huk is zeros only
++	 */
++	if (TEE_PARAM_TYPES(TEE_PARAM_TYPE_VALUE_INOUT, TEE_PARAM_TYPE_NONE,
++			    TEE_PARAM_TYPE_NONE, TEE_PARAM_TYPE_NONE) != type) {
++		return TEE_ERROR_BAD_PARAMETERS;
++	}
++
++	// get the huk here and check for the 0s then return huk_zero
++	res = tee_otp_get_hw_unique_key(&huk);
++	if (res != TEE_SUCCESS)
++		return res;
++
++	DMSG("=== Zero HUK & Chip ID test ===");
++	for (int i = 0; i < HW_UNIQUE_KEY_LENGTH; i++) {
++		DMSG("%d, %d", i, huk.data[i]);
++		if (huk.data[i] != 0) {
++			// if not zero we have a legit huk and return
++			p[0].value.a &= 0b10;
++			break;
++		}
++	}
++
++	chip_gen_res = tee_otp_get_die_id(chip_id, chip_id_len);
++	if (chip_gen_res == -1) {
++		res == TEE_ERROR_GENERIC;
++		return res;
++	}
++
++	for (size_t i = 0; i < chip_id_len; i++) {
++		DMSG("%ld, %d", i, chip_id[i]);
++		if (beef[i % 4] != chip_id[i]) {
++			p[0].value.a &= 0b01;
++		}
++	}
++	// nobody sees the huk chip id
++	memzero_explicit(&huk, sizeof(huk));
++	memzero_explicit(&chip_id, chip_id_len);
++	return res;
++}
+ 
+ static TEE_Result get_alloc_stats(uint32_t type, TEE_Param p[TEE_NUM_PARAMS])
+ {
+@@ -31,8 +92,7 @@ static TEE_Result get_alloc_stats(uint32_t type, TEE_Param p[TEE_NUM_PARAMS])
+ 	 * p[1].memref.buffer = output buffer to struct pta_stats_alloc
+ 	 */
+ 	if (TEE_PARAM_TYPES(TEE_PARAM_TYPE_VALUE_INPUT,
+-			    TEE_PARAM_TYPE_MEMREF_OUTPUT,
+-			    TEE_PARAM_TYPE_NONE,
++			    TEE_PARAM_TYPE_MEMREF_OUTPUT, TEE_PARAM_TYPE_NONE,
+ 			    TEE_PARAM_TYPE_NONE) != type) {
+ 		return TEE_ERROR_BAD_PARAMETERS;
+ 	}
+@@ -95,12 +155,11 @@ static TEE_Result get_alloc_stats(uint32_t type, TEE_Param p[TEE_NUM_PARAMS])
+ 
+ static TEE_Result get_pager_stats(uint32_t type, TEE_Param p[TEE_NUM_PARAMS])
+ {
+-	struct tee_pager_stats stats = { };
++	struct tee_pager_stats stats = {};
+ 
+-	if (TEE_PARAM_TYPES(TEE_PARAM_TYPE_VALUE_OUTPUT,
+-			    TEE_PARAM_TYPE_VALUE_OUTPUT,
+-			    TEE_PARAM_TYPE_VALUE_OUTPUT,
+-			    TEE_PARAM_TYPE_NONE) != type) {
++	if (TEE_PARAM_TYPES(
++		    TEE_PARAM_TYPE_VALUE_OUTPUT, TEE_PARAM_TYPE_VALUE_OUTPUT,
++		    TEE_PARAM_TYPE_VALUE_OUTPUT, TEE_PARAM_TYPE_NONE) != type) {
+ 		EMSG("expect 3 output values as argument");
+ 		return TEE_ERROR_BAD_PARAMETERS;
+ 	}
+@@ -119,7 +178,6 @@ static TEE_Result get_pager_stats(uint32_t type, TEE_Param p[TEE_NUM_PARAMS])
+ static TEE_Result get_memleak_stats(uint32_t type,
+ 				    TEE_Param p[TEE_NUM_PARAMS] __maybe_unused)
+ {
+-
+ 	if (TEE_PARAM_TYPES(TEE_PARAM_TYPE_NONE, TEE_PARAM_TYPE_NONE,
+ 			    TEE_PARAM_TYPE_NONE, TEE_PARAM_TYPE_NONE) != type)
+ 		return TEE_ERROR_BAD_PARAMETERS;
+@@ -134,33 +192,28 @@ static TEE_Result get_user_ta_stats(uint32_t type,
+ {
+ 	uint32_t res = TEE_SUCCESS;
+ 
+-	if (TEE_PARAM_TYPES(TEE_PARAM_TYPE_MEMREF_OUTPUT,
+-			    TEE_PARAM_TYPE_NONE,
+-			    TEE_PARAM_TYPE_NONE,
+-			    TEE_PARAM_TYPE_NONE) != type)
++	if (TEE_PARAM_TYPES(TEE_PARAM_TYPE_MEMREF_OUTPUT, TEE_PARAM_TYPE_NONE,
++			    TEE_PARAM_TYPE_NONE, TEE_PARAM_TYPE_NONE) != type)
+ 		return TEE_ERROR_BAD_PARAMETERS;
+ 
+ #if defined(CFG_TA_STATS)
+-	res = tee_ta_instance_stats(p[0].memref.buffer,
+-				    &p[0].memref.size);
++	res = tee_ta_instance_stats(p[0].memref.buffer, &p[0].memref.size);
+ 	if (res != TEE_SUCCESS)
+-		DMSG("tee_ta_dump_stats return: 0x%"PRIx32, res);
++		DMSG("tee_ta_dump_stats return: 0x%" PRIx32, res);
+ #else
+ 	res = TEE_ERROR_NOT_SUPPORTED;
+ #endif
+ 	return res;
+ }
+ 
+-static TEE_Result get_system_time(uint32_t type,
+-				  TEE_Param p[TEE_NUM_PARAMS])
++static TEE_Result get_system_time(uint32_t type, TEE_Param p[TEE_NUM_PARAMS])
+ {
+ 	TEE_Result ret = TEE_ERROR_GENERIC;
+-	TEE_Time ree_time = { };
+-	TEE_Time tee_time = { };
++	TEE_Time ree_time = {};
++	TEE_Time tee_time = {};
+ 
+ 	if (TEE_PARAM_TYPES(TEE_PARAM_TYPE_VALUE_OUTPUT,
+-			    TEE_PARAM_TYPE_VALUE_OUTPUT,
+-			    TEE_PARAM_TYPE_NONE,
++			    TEE_PARAM_TYPE_VALUE_OUTPUT, TEE_PARAM_TYPE_NONE,
+ 			    TEE_PARAM_TYPE_NONE) != type)
+ 		return TEE_ERROR_BAD_PARAMETERS;
+ 
+@@ -182,10 +235,8 @@ static TEE_Result get_system_time(uint32_t type,
+ 
+ static TEE_Result print_driver_info(uint32_t type, TEE_Param p[TEE_NUM_PARAMS])
+ {
+-	if (TEE_PARAM_TYPES(TEE_PARAM_TYPE_VALUE_INPUT,
+-			    TEE_PARAM_TYPE_NONE,
+-			    TEE_PARAM_TYPE_NONE,
+-			    TEE_PARAM_TYPE_NONE) != type)
++	if (TEE_PARAM_TYPES(TEE_PARAM_TYPE_VALUE_INPUT, TEE_PARAM_TYPE_NONE,
++			    TEE_PARAM_TYPE_NONE, TEE_PARAM_TYPE_NONE) != type)
+ 		return TEE_ERROR_BAD_PARAMETERS;
+ 
+ 	switch (p[0].value.a) {
+@@ -206,8 +257,8 @@ static TEE_Result print_driver_info(uint32_t type, TEE_Param p[TEE_NUM_PARAMS])
+  * Trusted Application Entry Points
+  */
+ 
+-static TEE_Result invoke_command(void *psess __unused,
+-				 uint32_t cmd, uint32_t ptypes,
++static TEE_Result invoke_command(void *psess __unused, uint32_t cmd,
++				 uint32_t ptypes,
+ 				 TEE_Param params[TEE_NUM_PARAMS])
+ {
+ 	switch (cmd) {
+@@ -223,6 +274,8 @@ static TEE_Result invoke_command(void *psess __unused,
+ 		return get_system_time(ptypes, params);
+ 	case STATS_CMD_PRINT_DRIVER_INFO:
+ 		return print_driver_info(ptypes, params);
++	case STATS_GET_HUK_ZERO:
++		return get_huk_zero(ptypes, params);
+ 	default:
+ 		break;
+ 	}
+diff --git a/lib/libutee/include/pta_stats.h b/lib/libutee/include/pta_stats.h
+index f95d3acb8..ccb3c70dd 100644
+--- a/lib/libutee/include/pta_stats.h
++++ b/lib/libutee/include/pta_stats.h
+@@ -87,6 +87,7 @@ struct pta_stats_ta {
+  * [in]    value[0].a        Target driver, one of STATS_DRIVER_TYPE_*
+  */
+ #define STATS_CMD_PRINT_DRIVER_INFO	5
++#define STATS_GET_HUK_ZERO	6
+ 
+ #define STATS_DRIVER_TYPE_CLOCK		0
+ #define STATS_DRIVER_TYPE_REGULATOR	1
